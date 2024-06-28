@@ -113,7 +113,7 @@ Primary use:	Showcase Portfolio
 		background: none repeat scroll 0 0 #000;
 		text-decoration: none;
 		color:#fff;
-		font-family: "Montserrat",sans-serif;
+		font-family: "Bricolage Grotesque",sans-serif;
 		font-size: 10px;
 		font-weight: 400;
 		letter-spacing: 4px;
@@ -929,11 +929,20 @@ Primary use:	Showcase Portfolio
 		height:140px;
 		left:0;
 		top:0;
-		background-color:transparent;
+		background-color: white; /* Solid color */
 		position:fixed;
 		box-sizing:border-box;
 		z-index:1000;
+		backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
 	}
+
+		/* Targeting the <nav> element directly */
+	nav {
+		background-color: transparent;
+	}
+
+	/* Alternatively, if you want to target the #header-container which wraps around the <nav> */
+
 	
 	#header-container {
 		box-sizing: border-box;
@@ -942,8 +951,10 @@ Primary use:	Showcase Portfolio
 		margin: 0 auto;
 		position: relative;
 		width: 100%;
+		width: 100%;
 		z-index: 20;
 		opacity:0;
+		background-color: transparent;
 	}
 	
 	.header-visible #header-container{
@@ -1057,9 +1068,25 @@ Primary use:	Showcase Portfolio
 			position:relative;
 			border-left: medium none;
 			font-weight: 600;
-			font-family: 'Poppins', sans-serif;
+			font-family: 'Bricolage Grotesque', sans-serif;
 			color:#000;		
-			font-size:12px;
+			font-size:16px;
+			line-height:20px;
+			display:block;
+			overflow:hidden;
+			-webkit-transition: all 0.15s ease-in-out;
+			transition: all 0.15s ease-in-out;
+		}
+
+		.flexnav-bot li a {    
+			background: transparent none repeat scroll 0 0;
+			padding: 10px 0 4px 0;
+			position:relative;
+			border-left: medium none;
+			font-weight: 600;
+			font-family: 'Bricolage Grotesque', sans-serif;
+			color:#ffffff;		
+			font-size:10px;
 			line-height:20px;
 			display:block;
 			overflow:hidden;
@@ -1301,7 +1328,7 @@ Primary use:	Showcase Portfolio
 		
 		.fullscreen-menu .flexnav li a {
 			font-weight: 700;
-			font-family: 'Poppins', sans-serif;
+			font-family: 'Bricolage Grotesque', sans-serif;
 			font-size: 4vw;
 			line-height:4vw;
 			padding:10px 0;
@@ -1992,7 +2019,7 @@ Primary use:	Showcase Portfolio
 		float: left;
 		font-size: 12px;
 		font-weight: 600;
-		font-family: 'Poppins', sans-serif;
+		font-family: 'Bricolage Grotesque', sans-serif;
 		line-height: 40px;
 	}
 	
@@ -2106,7 +2133,7 @@ Primary use:	Showcase Portfolio
 		float:right;
 		font-size:12px;
 		font-weight: 600;
-		font-family: 'Poppins', sans-serif;
+		font-family: 'Bricolage Grotesque', sans-serif;
 		line-height:40px;
 	}
 	
@@ -2280,7 +2307,7 @@ Primary use:	Showcase Portfolio
 
 	.button-text {
 		font-weight: 600;
-		font-family: 'Poppins', sans-serif;
+		font-family: 'Bricolage Grotesque', sans-serif;
 		font-size: 12px;
 		line-height:40px;
 		margin-left: 20px;
@@ -2550,7 +2577,7 @@ Primary use:	Showcase Portfolio
 	
 	.flexnav li a {
 		font-weight: 700;
-		font-family: 'Poppins', sans-serif;
+		font-family: 'Bricolage Grotesque', sans-serif;
 		font-size: 6vw;
 		padding:10px 0;
 		color:inherit;
