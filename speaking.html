@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Speaking | Oluwademilade Bamgboye</title>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/bricolage-grotesque">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: #999;
+            background-color: #0f1010;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        #hero {
+            width: 100%;
+            padding: 180px 60px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 80px;
+            line-height: 90px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .hero-title .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 28px;
+            color: #999;
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 40px;
+            max-width: 800px;
+        }
+
+        .hero-subtitle:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            left: 0;
+            top: 13px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 60px 0 80px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            min-width: 180px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #999;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        /* Filter Tabs */
+        .filter-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .filter-tabs {
+            display: inline-flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            position: relative;
+            padding: 0 0 100px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 100px;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            max-width: calc(50% - 30px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 4px solid #0f1010;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Post Card */
+        .post-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0077b5, #1da1f2);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .post-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .platform-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .platform-icon.linkedin {
+            background: #0077b5;
+        }
+
+        .platform-icon.twitter {
+            background: #1da1f2;
+        }
+
+        .post-meta {
+            flex: 1;
+        }
+
+        .post-platform {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .post-date {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .post-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .post-content {
+            font-size: 14px;
+            color: #999;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .post-stats {
+            display: flex;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .stat-item i {
+            color: #fff;
+        }
+
+        .post-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .post-link:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* Video Embed */
+        .video-embed {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        /* Loading State */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .empty-icon {
+            font-size: 64px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 1024px) {
+            .hero-title {
+                font-size: 60px;
+                line-height: 70px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                gap: 30px;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+            }
+
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            #hero {
+                padding: 140px 40px 80px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+                line-height: 50px;
+            }
+
+            .container {
+                padding: 0 40px;
+            }
+
+            .stats-section {
+                gap: 30px;
+            }
+
+            .stat-box {
+                min-width: 140px;
+                padding: 20px;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 479px) {
+            #hero {
+                padding: 120px 20px 60px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        /* Fade In */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1 class="hero-title" data-aos="fade-up">
+                <span id="typed-text"></span><span class="typed-cursor">_</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Sharing knowledge, inspiring communities, and speaking at tech conferences worldwide. 
+                Follow my journey as I discuss innovation, development, and the future of technology.
+            </p>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-box float-animation" data-aos="fade-up" data-aos-delay="200" style="animation-delay: 0s;">
+                    <div class="stat-number" id="totalTalks">0</div>
+                    <div class="stat-label">Total Talks</div>
+                </div>
+                <div class="stat-box float-animation" data-aos="fade-up" data-aos-delay="300" style="animation-delay: 0.5s;">
+                    <div class="stat-number" id="totalEngagement">0</div>
+                    <div class="stat-label">Total Engagement</div>
+                </div>
+                <div class="stat-box float-animation" data-aos="fade-up" data-aos-delay="400" style="animation-delay: 1s;">
+                    <div class="stat-number" id="totalReach">0</div>
+                    <div class="stat-label">Reach (K+)</div>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section" data-aos="fade-up" data-aos-delay="500">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-btn active" data-filter="all">All Posts</button>
+                    <button class="filter-btn" data-filter="linkedin">LinkedIn</button>
+                    <button class="filter-btn" data-filter="twitter">Twitter</button>
+                    <button class="filter-btn" data-filter="conference">Conferences</button>
+                    <button class="filter-btn" data-filter="workshop">Workshops</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading State -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="container">
+        <div class="timeline-section" id="timeline">
+            <div class="timeline-line"></div>
+            <!-- Posts will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">📢</div>
+        <h3>No posts found</h3>
+        <p class="hero-subtitle" style="margin: 20px auto 0; padding-left: 0;">Try selecting a different filter</p>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="Lightbox image" id="lightboxImg">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+
+        // Typing Effect
+        const textToType = "Public Speaking";
+        const typedTextElement = document.getElementById('typed-text');
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < textToType.length) {
+                typedTextElement.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        setTimeout(typeText, 500);
+
+        // Speaking Engagements Data
+        // TODO: Replace with actual API calls when you have LinkedIn/Twitter API access
+        const speakingData = [
+            {
+                platform: 'linkedin',
+                title: 'Building Scalable APIs with Django REST Framework',
+                content: 'Had an amazing time speaking at Tech Conference 2024 about building robust and scalable APIs. Shared insights on best practices, security, and performance optimization.',
+                date: '2024-11-10',
+                type: 'conference',
+                tags: ['Django', 'API Development', 'Python'],
+                engagement: 1250,
+                reach: 15000,
+                link: 'https://linkedin.com/in/iamagbacoder',
+                video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                images: [
+                    'https://via.placeholder.com/400x400/0077b5/ffffff?text=Conference+1',
+                    'https://via.placeholder.com/400x400/0077b5/ffffff?text=Conference+2',
+                    'https://via.placeholder.com/400x400/0077b5/ffffff?text=Conference+3'
+                ]
+            },
+            {
+                platform: 'twitter',
+                title: 'AI and the Future of Development',
+                content: 'Just wrapped up an incredible workshop on integrating AI into everyday development workflows. The future is here! 🚀',
+                date: '2024-11-05',
+                type: 'workshop',
+                tags: ['AI', 'Machine Learning', 'Development'],
+                engagement: 856,
+                reach: 8500,
+                link: 'https://twitter.com/iamAgba_Coder',
+                video: null,
+                images: [
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Workshop+1',
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Workshop+2'
+                ]
+            },
+            {
+                platform: 'linkedin',
+                title: 'Security Best Practices in Modern Web Apps',
+                content: 'Delivered a keynote at DevSecOps Summit on implementing security throughout the development lifecycle. Prevention is better than cure!',
+                date: '2024-10-28',
+                type: 'conference',
+                tags: ['Security', 'Web Development', 'DevOps'],
+                engagement: 2100,
+                reach: 22000,
+                link: 'https://linkedin.com/in/iamagbacoder',
+                video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                images: null
+            },
+            {
+                platform: 'twitter',
+                title: 'Mobile Development with Flutter',
+                content: 'Great session today discussing cross-platform mobile development. Flutter makes it so much easier to build beautiful apps! 📱',
+                date: '2024-10-20',
+                type: 'workshop',
+                tags: ['Flutter', 'Mobile Dev', 'Cross-platform'],
+                engagement: 645,
+                reach: 7200,
+                link: 'https://twitter.com/iamAgba_Coder',
+                video: null,
+                images: [
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Flutter+1',
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Flutter+2',
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Flutter+3',
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Flutter+4'
+                ]
+            },
+            {
+                platform: 'linkedin',
+                title: 'Data Analysis for Developers',
+                content: 'Excited to have spoken at Data Science Conference about bridging the gap between development and data analysis. Pandas and NumPy are game changers!',
+                date: '2024-10-15',
+                type: 'conference',
+                tags: ['Data Analysis', 'Python', 'Pandas'],
+                engagement: 1800,
+                reach: 19000,
+                link: 'https://linkedin.com/in/iamagbacoder',
+                video: null,
+                images: null
+            },
+            {
+                platform: 'twitter',
+                title: 'Docker and Containerization Workshop',
+                content: 'Led a hands-on workshop on Docker and containerization. Seeing developers\' eyes light up when containers click is priceless! 🐳',
+                date: '2024-10-08',
+                type: 'workshop',
+                tags: ['Docker', 'DevOps', 'Containers'],
+                engagement: 923,
+                reach: 9800,
+                link: 'https://twitter.com/iamAgba_Coder',
+                video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                images: [
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Docker+1',
+                    'https://via.placeholder.com/400x400/1da1f2/ffffff?text=Docker+2'
+                ]
+            }
+        ];
+
+        let currentFilter = 'all';
+
+        // Calculate and update stats
+        function updateStats() {
+            const totalTalks = speakingData.length;
+            const totalEngagement = speakingData.reduce((sum, post) => sum + post.engagement, 0);
+            const totalReach = Math.floor(speakingData.reduce((sum, post) => sum + post.reach, 0) / 1000);
+            
+            animateNumber('totalTalks', totalTalks);
+            animateNumber('totalEngagement', totalEngagement);
+            animateNumber('totalReach', totalReach);
+        }
+
+        // Animate number counting
+        function animateNumber(id, target) {
+            const element = document.getElementById(id);
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 30);
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+
+        // Display posts
+        function displayPosts(posts) {
+            const timeline = document.getElementById('timeline');
+            const emptyState = document.getElementById('emptyState');
+            
+            timeline.innerHTML = '<div class="timeline-line"></div>';
+            
+            if (posts.length === 0) {
+                timeline.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            timeline.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+            
+            posts.forEach((post, index) => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item fade-in';
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.setAttribute('data-aos', 'fade-up');
+                item.setAttribute('data-aos-delay', index * 100);
+                
+                const platformIcon = post.platform === 'linkedin' 
+                    ? '<i class="fab fa-linkedin-in"></i>' 
+                    : '<i class="fab fa-twitter"></i>';
+                
+                item.innerHTML = `
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="post-card">
+                            <div class="post-header">
+                                <div class="platform-icon ${post.platform}">
+                                    ${platformIcon}
+                                </div>
+                                <div class="post-meta">
+                                    <div class="post-platform">${post.platform}</div>
+                                    <div class="post-date">${formatDate(post.date)}</div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="post-title">${post.title}</h3>
+                            <p class="post-content">${post.content}</p>
+                            
+                            ${post.video ? `
+                                <div class="video-embed">
+                                    <iframe src="${post.video}" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            ` : ''}
+                            
+                            ${post.images && post.images.length > 0 ? `
+                                <div class="image-gallery">
+                                    ${post.images.map((img, idx) => `
+                                        <div class="gallery-item" onclick="openLightbox('${img}')">
+                                            <img src="${img}" alt="Gallery image ${idx + 1}" loading="lazy">
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                            
+                            <div class="post-tags">
+                                ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                            
+                            <div class="post-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>${post.engagement.toLocaleString()}</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-eye"></i>
+                                    <span>${post.reach.toLocaleString()}</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-comment"></i>
+                                    <span>${Math.floor(post.engagement / 10)}</span>
+                                </div>
+                            </div>
+                            
+                            <a href="${post.link}" target="_blank" class="post-link">
+                                View on ${post.platform}
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                timeline.appendChild(item);
+            });
+            
+            AOS.refresh();
+        }
+
+        // Filter posts
+        function filterPosts(filter) {
+            currentFilter = filter;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === filter) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            let filtered = speakingData;
+            
+            if (filter !== 'all') {
+                filtered = speakingData.filter(post => 
+                    post.platform === filter || post.type === filter
+                );
+            }
+            
+            displayPosts(filtered);
+        }
+
+        // Setup filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterPosts(btn.dataset.filter);
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(imgSrc) {
+            event.stopPropagation();
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Initialize
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+            updateStats();
+            displayPosts(speakingData);
+        }, 1000);
+    </script>
+
+</body>
+</html>
